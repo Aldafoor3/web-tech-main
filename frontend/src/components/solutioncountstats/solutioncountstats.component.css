@@ -1,0 +1,10 @@
+table {
+	border-collapse: collapse; /* Ensures borders are not doubled */
+}
+
+td,
+th {
+	border: 1px solid black; /* Adds a black border to all cells (data and headers) */
+	padding: 8px; /* Adds some space inside the cells for better readability */
+	text-align: left; /* Optional: Aligns text to the left for consistency */
+}

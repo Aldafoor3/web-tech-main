@@ -1,0 +1,14 @@
+<h1>
+	Convert the following numbers from {{ getNameOfNumberBase(sourceBase) }} to
+	{{ getNameOfNumberBase(targetBase) }}
+</h1>
+<div *ngFor="let item of tasks">
+	<p>Convert {{ item.taskName }} to {{ getNameOfNumberBase(targetBase) }}</p>
+	<input
+		type="text"
+		[(ngModel)]="answerInputs[item.index]"
+		placeholder="Enter your answer"
+	/>
+</div>
+
+<button class="task-button" (click)="redirectToResults()">Submit</button>

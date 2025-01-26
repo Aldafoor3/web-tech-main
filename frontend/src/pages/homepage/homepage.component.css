@@ -1,0 +1,25 @@
+/*
+* The button grid layout will adapt based on the window's width,
+* starting from a 6x1 grid at the narrowest windows expanding
+* gradually until a 2x3 grid at 600 px window width.
+* 
+* If the window width is over 600 px, the 2x3 grid stays the same
+* width as it was at a window width of 600 px. Because the user's
+* attention is at the text, the rightmost buttons should be also near
+* the start of the text.
+*/
+
+.button-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+	gap: 10px;
+	max-width: 600px;
+}
+
+@media (min-width: 600px) {
+	/* Fixed 2x3 grid for wider screens */
+	.button-grid {
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: repeat(2, 1fr);
+	}
+}

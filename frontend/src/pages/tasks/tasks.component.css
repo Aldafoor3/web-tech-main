@@ -1,0 +1,12 @@
+.task-button {
+	width: 100%;
+	max-width: 200px;
+	background-color: #333;
+	color: white;
+
+	/* This CSS code ensures at least 2 lines of text height.
+	* For prettier format, the lines are slightly taller than the text itself.
+	*/
+	line-height: 1.25;
+	min-height: calc(1.5em * 2);
+}

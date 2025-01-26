@@ -1,0 +1,16 @@
+<div class="sidebar">
+	<button class="sidebar-button" (click)="navigateToHomepage()">
+		<div>
+			<img src="/assets/webtech_applogo.png" width="50" height="50" />
+		</div>
+		BIN-DEC-HEX Mentor Tool
+	</button>
+
+	<div class="sidebar-link-grid">
+		<app-button-with-link
+			*ngFor="let item of sidebarLinkMap"
+			text="{{ item.label }}"
+			route="{{ item.abbreviation + '/tutorial' }}"
+		/>
+	</div>
+</div>

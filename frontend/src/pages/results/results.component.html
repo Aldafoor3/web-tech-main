@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	</head>
+	<title>Results</title>
+	<body>
+		<div class="results-container">
+			<div class="performance-message">
+				<p>{{ performanceMessage }}</p>
+				<p class="exercise-overview">
+					Here's how you did on the exercise. Review your answers
+					below and see how well you understand the material!
+				</p>
+			</div>
+			<div *ngFor="let task of tasks" class="task">
+				<div class="task-content">
+					<p class="correctness">
+						<span
+							[class.correct]="task.correct"
+							[class.incorrect]="!task.correct"
+						>
+							{{ task.correct ? '✔' : '✘' }}
+						</span>
+					</p>
+					<p class="task-name">
+						<b>{{ task.taskName }}</b> in {{ taskSrc }} is
+						<b>{{ task.givenAnswer || 0 }}</b> in {{ taskDst }}
+					</p>
+					<!-- <p class="given-answer">{{ task.givenAnswer }}</p> -->
+					<button
+						*ngIf="!task.correct"
+						(click)="toggleExpand(task)"
+						class="expand-btn"
+					>
+						{{ task.expanded ? 'Hide' : 'Show' }} Correct Answer
+					</button>
+					<p *ngIf="task.expanded" class="correct-answer">
+						<strong>Correct Answer:</strong>
+						{{ task.correctAnswer }}
+					</p>
+					<!-- <button *ngIf="task.expanded" class="action-btn" (click)="binToDec('11001100', '24')">Details</button> -->
+
+					<button
+						*ngIf="task.expanded && !explanation"
+						class="action-btn"
+						(click)="
+							explanation = explainConversion(
+								taskSrc,
+								taskDst,
+								task.taskName,
+								task.correctAnswer
+							)
+						"
+					>
+						Details
+					</button>
+					<p
+						*ngIf="explanation && task.expanded"
+						[innerHTML]="explanation"
+						style="text-align: left"
+					>
+						{{ explanation }}
+					</p>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,15 @@
+<p>Total amount of solved tasks: {{ allSolvedTasks.length }}</p>
+
+<table>
+	<th>Type of conversion</th>
+	<th>Amount of solutions</th>
+
+	<tr *ngFor="let item of breakDownByTaskType">
+		<td>
+			{{ item.type }}
+		</td>
+		<td>
+			{{ item.amount }}
+		</td>
+	</tr>
+</table>

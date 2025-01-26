@@ -1,0 +1,148 @@
+body {
+    background-color: white;
+    color: #b0b0b0;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  
+  .results-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;  /*To take the maximum space in the page */
+    width: 100%;
+    text-align: center;
+  }
+  
+  
+  .task {
+    background-color: #333;
+    border-radius: 8px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin: 10px;
+    width: 90%;  /* To keep an offset on the sides if the screen gets too narrow */
+    max-width: 600px;  /* Used with "width" to used a new line if the screen gets 
+                          too narrow instead of overflowing */
+  }
+  
+  .task-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;  /* Contents go to a new line if there is not enough space*/
+  }
+  
+  .task-name {
+    font-size: 18px;
+    color: whitesmoke;  /* Not using clear white because it would look too boring
+                            even though it's a small difference*/
+    text-align: left;
+    margin: 0;
+    flex: 1;
+    width:100%;
+  }
+  
+  .given-answer {
+    font-size: 18px;
+    color: whitesmoke;
+    margin: 0;
+    text-align: right;
+    flex: 1;
+  }
+  
+  .correct-answer {
+    margin-top: 15px;
+    padding-left: 23.4px;  /* This is the width of the icon plus the added width on 
+                              the line above. It is used to have the same margin
+                              when "correct answer" is shown*/
+    text-align: left;
+    width: 100%;
+  }
+  
+  
+  /* Icon and its colours */
+  .correctness {
+    margin-right: 10px;
+    flex: 0;
+  }
+  .correct {
+    color: green;
+  }
+  .incorrect {
+    color: red;
+  }
+  
+  
+  /* "Show Correct Answer" button */
+  .expand-btn {
+    background-color: #444;
+    color: whitesmoke;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .expand-btn:hover {
+    background-color: #555;
+  }
+  
+  
+  /* Motivation message at the top */
+  .performance-message {
+    margin-top: 70px;
+    margin-bottom: 40px;
+    margin-left: 60px;
+    margin-right: 60px;
+    font-size: 18px;
+    font-weight: bold;
+    color: whitesmoke;
+    background-color: #333;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    width: 90%;
+    max-width: 600px;
+  }
+  /* The default text below the motivation message */
+  .exercise-overview {
+    font-size: 16px;
+    color: #ccc;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  
+  /* The "Home" and "Play Again" buttons */
+  .action-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 40px;
+    width: 100%;
+    max-width: 800px;
+  }
+  .action-btn {
+    background-color: #444;
+    color: whitesmoke;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    width: 150px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .action-btn:hover {
+    background-color: #555;
+  }
+  
+    
+    

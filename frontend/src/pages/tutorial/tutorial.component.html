@@ -1,0 +1,633 @@
+<div *ngIf="type">
+	<ng-container [ngSwitch]="type">
+		<div *ngSwitchCase="'bin-dec'">
+			<h1>Binary to Decimal Conversion Tutorial</h1>
+
+			<p>
+				In this tutorial, you will learn how to convert a binary number
+				(base 2) into its decimal equivalent (base 10). Follow these
+				simple steps to understand the conversion process.
+			</p>
+
+			<h2>Steps to Convert Binary to Decimal</h2>
+			<ol class="steps">
+				<li>Write down the binary number.</li>
+				<li>
+					Starting from the rightmost digit (the least significant
+					bit), assign powers of 2 to each digit. The rightmost digit
+					is multiplied by 2^0, the next one by 2^1, then 2^2, and so
+					on.
+				</li>
+				<li>
+					Multiply each binary digit by the corresponding power of 2.
+				</li>
+				<li>
+					Sum the results of these multiplications to get the decimal
+					value.
+				</li>
+			</ol>
+
+			<h2>Example 1: Convert 1011 (Binary) to Decimal</h2>
+			<div class="example">
+				<p><strong>Step-by-Step Process:</strong></p>
+				<p>Binary number: <code>1011</code></p>
+				<p>Assign powers of 2 from right to left:</p>
+				<pre>1 * 2^3 = 1 * 8 = 8</pre>
+				<pre>0 * 2^2 = 0 * 4 = 0</pre>
+				<pre>1 * 2^1 = 1 * 2 = 2</pre>
+				<pre>1 * 2^0 = 1 * 1 = 1</pre>
+				<p><strong>Sum the results:</strong></p>
+				<pre>8 + 0 + 2 + 1 = 11</pre>
+				<p>
+					The decimal equivalent of <code>1011</code> (binary) is
+					<strong>11</strong>.
+				</p>
+			</div>
+
+			<h2>Example 2: Convert 11010 (Binary) to Decimal</h2>
+			<div class="example">
+				<p><strong>Step-by-Step Process:</strong></p>
+				<p>Binary number: <code>11010</code></p>
+				<p>Assign powers of 2 from right to left:</p>
+				<pre>1 * 2^4 = 1 * 16 = 16</pre>
+				<pre>1 * 2^3 = 1 * 8 = 8</pre>
+				<pre>0 * 2^2 = 0 * 4 = 0</pre>
+				<pre>1 * 2^1 = 1 * 2 = 2</pre>
+				<pre>0 * 2^0 = 0 * 1 = 0</pre>
+				<p><strong>Sum the results:</strong></p>
+				<pre>16 + 8 + 0 + 2 + 0 = 26</pre>
+				<p>
+					The decimal equivalent of <code>11010</code> (binary) is
+					<strong>26</strong>.
+				</p>
+			</div>
+
+			<h2>Summary</h2>
+			<p>
+				To convert a binary number to decimal, you need to multiply each
+				binary digit by its corresponding power of 2 and sum the
+				results. This simple method allows you to easily convert any
+				binary number to its decimal form.
+			</p>
+
+			<p>Learn to convert binary to decimal!</p>
+			<app-button-with-link
+				text="Start Tasks"
+				route="/bin-dec/tasks/{{ taskID }}"
+			/>
+			<p>Click the button to navigate to tasks.</p>
+		</div>
+		<div *ngSwitchCase="'bin-hex'">
+			<h1>Binary to Hexadecimal Conversion Tutorial</h1>
+
+			<p>
+				In this tutorial, you will learn how to convert a binary number
+				(base 2) into its hexadecimal equivalent (base 16). The
+				conversion process involves grouping the binary digits into sets
+				of four and then converting each group into a hexadecimal digit.
+			</p>
+
+			<h2>Steps to Convert Binary to Hexadecimal</h2>
+			<ol class="steps">
+				<li>Write down the binary number.</li>
+				<li>
+					Starting from the rightmost digit, group the binary digits
+					into sets of four. If necessary, add leading zeros to the
+					leftmost group to make it a complete group of four.
+				</li>
+				<li>
+					Convert each group of four binary digits into a single
+					hexadecimal digit. Use the following table for reference:
+				</li>
+			</ol>
+			<table>
+				<thead>
+					<tr>
+						<th>Binary</th>
+						<th>Hexadecimal</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>0000</td>
+						<td>0</td>
+					</tr>
+					<tr>
+						<td>0001</td>
+						<td>1</td>
+					</tr>
+					<tr>
+						<td>0010</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td>0011</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td>0100</td>
+						<td>4</td>
+					</tr>
+					<tr>
+						<td>0101</td>
+						<td>5</td>
+					</tr>
+					<tr>
+						<td>0110</td>
+						<td>6</td>
+					</tr>
+					<tr>
+						<td>0111</td>
+						<td>7</td>
+					</tr>
+					<tr>
+						<td>1000</td>
+						<td>8</td>
+					</tr>
+					<tr>
+						<td>1001</td>
+						<td>9</td>
+					</tr>
+					<tr>
+						<td>1010</td>
+						<td>A</td>
+					</tr>
+					<tr>
+						<td>1011</td>
+						<td>B</td>
+					</tr>
+					<tr>
+						<td>1100</td>
+						<td>C</td>
+					</tr>
+					<tr>
+						<td>1101</td>
+						<td>D</td>
+					</tr>
+					<tr>
+						<td>1110</td>
+						<td>E</td>
+					</tr>
+					<tr>
+						<td>1111</td>
+						<td>F</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<h2>Example 1: Convert 110101101 (Binary) to Hexadecimal</h2>
+			<div class="example">
+				<p><strong>Step-by-Step Process:</strong></p>
+				<p>Binary number: <code>110101101</code></p>
+				<p>
+					Group the binary digits into sets of four from right to
+					left:
+				</p>
+				<pre>0011 0101 1010</pre>
+				<p>Convert each group to hexadecimal using the table:</p>
+				<pre>0011 → 3</pre>
+				<pre>0101 → 5</pre>
+				<pre>1010 → A</pre>
+				<p>
+					The hexadecimal equivalent of
+					<code>110101101</code> (binary) is <strong>35A</strong>.
+				</p>
+			</div>
+
+			<h2>Example 2: Convert 111110110010 (Binary) to Hexadecimal</h2>
+			<div class="example">
+				<p><strong>Step-by-Step Process:</strong></p>
+				<p>Binary number: <code>111110110010</code></p>
+				<p>Group the binary digits into sets of four:</p>
+				<pre>1111 1011 0010</pre>
+				<p>Convert each group to hexadecimal using the table:</p>
+				<pre>1111 → F</pre>
+				<pre>1011 → B</pre>
+				<pre>0010 → 2</pre>
+				<p>
+					The hexadecimal equivalent of
+					<code>111110110010</code> (binary) is <strong>FB2</strong>.
+				</p>
+			</div>
+
+			<h2>Summary</h2>
+			<p>
+				To convert a binary number to hexadecimal, you group the binary
+				digits into sets of four starting from the right, then convert
+				each group into its corresponding hexadecimal digit using the
+				conversion table. This process allows you to easily transform
+				any binary number into its hexadecimal form.
+			</p>
+
+			<p>Learn to convert binary to hexadecimal!</p>
+			<app-button-with-link
+				text="Start Tasks"
+				route="/bin-hex/tasks/{{ taskID }}"
+			/>
+			<p>Click the button to navigate to tasks.</p>
+		</div>
+		<div *ngSwitchCase="'dec-bin'">
+			<h1>Decimal to Binary Conversion Tutorial</h1>
+
+			<p>
+				In this tutorial, you will learn how to convert a decimal number
+				(base 10) into its binary equivalent (base 2). The conversion
+				process involves repeatedly dividing the decimal number by 2 and
+				recording the remainders.
+			</p>
+
+			<h2>Steps to Convert Decimal to Binary</h2>
+			<ol class="steps">
+				<li>Write down the decimal number you want to convert.</li>
+				<li>Divide the decimal number by 2.</li>
+				<li>Record the remainder of the division (either 0 or 1).</li>
+				<li>
+					Divide the quotient (the result from the division) by 2
+					again, and record the new remainder.
+				</li>
+				<li>Repeat the process until the quotient becomes 0.</li>
+				<li>
+					Write the remainders in reverse order (starting from the
+					last remainder). This is the binary equivalent of the
+					decimal number.
+				</li>
+			</ol>
+
+			<h2>Example 1: Convert 13 (Decimal) to Binary</h2>
+			<div class="example">
+				<p><strong>Step-by-Step Process:</strong></p>
+				<p>Decimal number: <code>13</code></p>
+				<p>Divide by 2:</p>
+				<pre>13 ÷ 2 = 6 remainder 1</pre>
+				<p>Divide the quotient (6) by 2:</p>
+				<pre>6 ÷ 2 = 3 remainder 0</pre>
+				<p>Divide the quotient (3) by 2:</p>
+				<pre>3 ÷ 2 = 1 remainder 1</pre>
+				<p>Divide the quotient (1) by 2:</p>
+				<pre>1 ÷ 2 = 0 remainder 1</pre>
+				<p><strong>Write the remainders in reverse order:</strong></p>
+				<pre>1 1 0 1</pre>
+				<p>
+					The binary equivalent of <code>13</code> (decimal) is
+					<strong>1101</strong>.
+				</p>
+			</div>
+
+			<h2>Example 2: Convert 25 (Decimal) to Binary</h2>
+			<div class="example">
+				<p><strong>Step-by-Step Process:</strong></p>
+				<p>Decimal number: <code>25</code></p>
+				<p>Divide by 2:</p>
+				<pre>25 ÷ 2 = 12 remainder 1</pre>
+				<p>Divide the quotient (12) by 2:</p>
+				<pre>12 ÷ 2 = 6 remainder 0</pre>
+				<p>Divide the quotient (6) by 2:</p>
+				<pre>6 ÷ 2 = 3 remainder 0</pre>
+				<p>Divide the quotient (3) by 2:</p>
+				<pre>3 ÷ 2 = 1 remainder 1</pre>
+				<p>Divide the quotient (1) by 2:</p>
+				<pre>1 ÷ 2 = 0 remainder 1</pre>
+				<p><strong>Write the remainders in reverse order:</strong></p>
+				<pre>1 1 0 0 1</pre>
+				<p>
+					The binary equivalent of <code>25</code> (decimal) is
+					<strong>11001</strong>.
+				</p>
+			</div>
+
+			<h2>Summary</h2>
+			<p>
+				To convert a decimal number to binary, you repeatedly divide the
+				number by 2, keeping track of the remainders. Once the quotient
+				reaches 0, writing the remainders in reverse order gives you the
+				binary equivalent of the decimal number.
+			</p>
+
+			<p>Learn to convert decimal to binary!</p>
+			<app-button-with-link
+				text="Start Tasks"
+				route="/dec-bin/tasks/{{ taskID }}"
+			/>
+			<p>Click the button to navigate to tasks.</p>
+		</div>
+		<div *ngSwitchCase="'dec-hex'">
+			<h1>Decimal to Hexadecimal Conversion Tutorial</h1>
+
+			<p>
+				In this tutorial, you will learn how to convert a decimal number
+				(base 10) into its hexadecimal equivalent (base 16). The
+				conversion process involves repeatedly dividing the decimal
+				number by 16 and recording the remainders.
+			</p>
+
+			<h2>Steps to Convert Decimal to Hexadecimal</h2>
+			<ol class="steps">
+				<li>Write down the decimal number you want to convert.</li>
+				<li>Divide the decimal number by 16.</li>
+				<li>
+					Record the remainder of the division. If the remainder is 10
+					or higher, replace it with the corresponding hexadecimal
+					letter (A = 10, B = 11, ..., F = 15).
+				</li>
+				<li>
+					Divide the quotient (the result of the division) by 16
+					again, and record the new remainder.
+				</li>
+				<li>Repeat the process until the quotient becomes 0.</li>
+				<li>
+					Write the remainders in reverse order (starting from the
+					last remainder). This is the hexadecimal equivalent of the
+					decimal number.
+				</li>
+			</ol>
+
+			<h2>Example 1: Convert 254 (Decimal) to Hexadecimal</h2>
+			<div class="example">
+				<p><strong>Step-by-Step Process:</strong></p>
+				<p>Decimal number: <code>254</code></p>
+				<p>Divide by 16:</p>
+				<pre>254 ÷ 16 = 15 remainder 14 (14 = E in hexadecimal)</pre>
+				<p>Divide the quotient (15) by 16:</p>
+				<pre>15 ÷ 16 = 0 remainder 15 (15 = F in hexadecimal)</pre>
+				<p><strong>Write the remainders in reverse order:</strong></p>
+				<pre>F E</pre>
+				<p>
+					The hexadecimal equivalent of <code>254</code> (decimal) is
+					<strong>FE</strong>.
+				</p>
+			</div>
+
+			<h2>Example 2: Convert 678 (Decimal) to Hexadecimal</h2>
+			<div class="example">
+				<p><strong>Step-by-Step Process:</strong></p>
+				<p>Decimal number: <code>678</code></p>
+				<p>Divide by 16:</p>
+				<pre>678 ÷ 16 = 42 remainder 6</pre>
+				<p>Divide the quotient (42) by 16:</p>
+				<pre>42 ÷ 16 = 2 remainder 10 (10 = A in hexadecimal)</pre>
+				<p>Divide the quotient (2) by 16:</p>
+				<pre>2 ÷ 16 = 0 remainder 2</pre>
+				<p><strong>Write the remainders in reverse order:</strong></p>
+				<pre>2 A 6</pre>
+				<p>
+					The hexadecimal equivalent of <code>678</code> (decimal) is
+					<strong>2A6</strong>.
+				</p>
+			</div>
+
+			<h2>Summary</h2>
+			<p>
+				To convert a decimal number to hexadecimal, you repeatedly
+				divide the number by 16, keeping track of the remainders. Once
+				the quotient reaches 0, writing the remainders in reverse order
+				gives you the hexadecimal equivalent of the decimal number.
+			</p>
+
+			<h1>Decimal to Hexadecimal Conversion Tutorial</h1>
+			<p>Learn to convert decimal to hexadecimal!</p>
+			<app-button-with-link
+				text="Start Tasks"
+				route="/dec-hex/tasks/{{ taskID }}"
+			/>
+			<p>Click the button to navigate to tasks.</p>
+		</div>
+		<div *ngSwitchCase="'hex-bin'">
+			<h1>Hexadecimal to Binary Conversion Tutorial</h1>
+
+			<p>
+				In this tutorial, you will learn how to convert a hexadecimal
+				number (base 16) into its binary equivalent (base 2). The
+				process involves converting each hexadecimal digit into a 4-bit
+				binary number.
+			</p>
+
+			<h2>Steps to Convert Hexadecimal to Binary</h2>
+			<ol class="steps">
+				<li>Write down the hexadecimal number you want to convert.</li>
+				<li>
+					Convert each hexadecimal digit to its corresponding 4-bit
+					binary equivalent using the following table:
+				</li>
+			</ol>
+			<table>
+				<thead>
+					<tr>
+						<th>Hexadecimal</th>
+						<th>Binary</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>0</td>
+						<td>0000</td>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td>0001</td>
+					</tr>
+					<tr>
+						<td>2</td>
+						<td>0010</td>
+					</tr>
+					<tr>
+						<td>3</td>
+						<td>0011</td>
+					</tr>
+					<tr>
+						<td>4</td>
+						<td>0100</td>
+					</tr>
+					<tr>
+						<td>5</td>
+						<td>0101</td>
+					</tr>
+					<tr>
+						<td>6</td>
+						<td>0110</td>
+					</tr>
+					<tr>
+						<td>7</td>
+						<td>0111</td>
+					</tr>
+					<tr>
+						<td>8</td>
+						<td>1000</td>
+					</tr>
+					<tr>
+						<td>9</td>
+						<td>1001</td>
+					</tr>
+					<tr>
+						<td>A</td>
+						<td>1010</td>
+					</tr>
+					<tr>
+						<td>B</td>
+						<td>1011</td>
+					</tr>
+					<tr>
+						<td>C</td>
+						<td>1100</td>
+					</tr>
+					<tr>
+						<td>D</td>
+						<td>1101</td>
+					</tr>
+					<tr>
+						<td>E</td>
+						<td>1110</td>
+					</tr>
+					<tr>
+						<td>F</td>
+						<td>1111</td>
+					</tr>
+				</tbody>
+			</table>
+			<p>
+				Each hexadecimal digit corresponds to exactly 4 binary digits
+				(bits). Replace each hexadecimal digit in the number with its
+				binary equivalent.
+			</p>
+
+			<h2>Example 1: Convert 1F (Hexadecimal) to Binary</h2>
+			<div class="example">
+				<p><strong>Step-by-Step Process:</strong></p>
+				<p>Hexadecimal number: <code>1F</code></p>
+				<p>Convert each digit:</p>
+				<pre>1 → 0001</pre>
+				<pre>F → 1111</pre>
+				<p><strong>Combine the binary digits:</strong></p>
+				<pre>0001 1111</pre>
+				<p>
+					The binary equivalent of <code>1F</code> (hexadecimal) is
+					<strong>00011111</strong>.
+				</p>
+			</div>
+
+			<h2>Example 2: Convert A3 (Hexadecimal) to Binary</h2>
+			<div class="example">
+				<p><strong>Step-by-Step Process:</strong></p>
+				<p>Hexadecimal number: <code>A3</code></p>
+				<p>Convert each digit:</p>
+				<pre>A → 1010</pre>
+				<pre>3 → 0011</pre>
+				<p><strong>Combine the binary digits:</strong></p>
+				<pre>1010 0011</pre>
+				<p>
+					The binary equivalent of <code>A3</code> (hexadecimal) is
+					<strong>10100011</strong>.
+				</p>
+			</div>
+
+			<h2>Summary</h2>
+			<p>
+				To convert a hexadecimal number to binary, simply convert each
+				hexadecimal digit into its corresponding 4-bit binary
+				equivalent. This process is quick and easy because each
+				hexadecimal digit maps directly to exactly four binary digits.
+			</p>
+
+			<p>Learn to convert hexadecimal to binary!</p>
+			<app-button-with-link
+				text="Start Tasks"
+				route="/hex-bin/tasks/{{ taskID }}"
+			/>
+			<p>Click the button to navigate to tasks.</p>
+		</div>
+		<div *ngSwitchCase="'hex-dec'">
+			<h1>Hexadecimal to Decimal Conversion Tutorial</h1>
+
+			<p>
+				In this tutorial, you will learn how to convert a hexadecimal
+				number (base 16) into its decimal equivalent (base 10). The
+				conversion process involves expanding the hexadecimal number and
+				multiplying each digit by the power of 16.
+			</p>
+
+			<h2>Steps to Convert Hexadecimal to Decimal</h2>
+			<ol class="steps">
+				<li>Write down the hexadecimal number you want to convert.</li>
+				<li>
+					Starting from the rightmost digit, assign a position to each
+					digit, starting from 0. Each position will represent a power
+					of 16 (16<sup>0</sup>, 16<sup>1</sup>, 16<sup>2</sup>, ...).
+				</li>
+				<li>
+					Convert each hexadecimal digit to its decimal equivalent (A
+					= 10, B = 11, C = 12, D = 13, E = 14, F = 15).
+				</li>
+				<li>
+					Multiply each digit by 16 raised to the power of its
+					position.
+				</li>
+				<li>Sum all the results to get the decimal equivalent.</li>
+			</ol>
+
+			<h2>Example 1: Convert 1F (Hexadecimal) to Decimal</h2>
+			<div class="example">
+				<p><strong>Step-by-Step Process:</strong></p>
+				<p>Hexadecimal number: <code>1F</code></p>
+				<p>Assign positions starting from the right:</p>
+				<pre>1 (position 1), F (position 0)</pre>
+				<p>Convert hexadecimal digits to decimal:</p>
+				<pre>1 → 1</pre>
+				<pre>F → 15</pre>
+				<p>
+					Now, multiply each digit by 16 raised to the power of its
+					position:
+				</p>
+				<pre>1 × 16<sup>1</sup> = 16</pre>
+				<pre>15 × 16<sup>0</sup> = 15</pre>
+				<p><strong>Sum the results:</strong></p>
+				<pre>16 + 15 = 31</pre>
+				<p>
+					The decimal equivalent of <code>1F</code> (hexadecimal) is
+					<strong>31</strong>.
+				</p>
+			</div>
+
+			<h2>Example 2: Convert A3 (Hexadecimal) to Decimal</h2>
+			<div class="example">
+				<p><strong>Step-by-Step Process:</strong></p>
+				<p>Hexadecimal number: <code>A3</code></p>
+				<p>Assign positions starting from the right:</p>
+				<pre>A (position 1), 3 (position 0)</pre>
+				<p>Convert hexadecimal digits to decimal:</p>
+				<pre>A → 10</pre>
+				<pre>3 → 3</pre>
+				<p>
+					Now, multiply each digit by 16 raised to the power of its
+					position:
+				</p>
+				<pre>10 × 16<sup>1</sup> = 160</pre>
+				<pre>3 × 16<sup>0</sup> = 3</pre>
+				<p><strong>Sum the results:</strong></p>
+				<pre>160 + 3 = 163</pre>
+				<p>
+					The decimal equivalent of <code>A3</code> (hexadecimal) is
+					<strong>163</strong>.
+				</p>
+			</div>
+
+			<h2>Summary</h2>
+			<p>
+				To convert a hexadecimal number to decimal, first assign
+				positions to each digit, starting from the right. Convert each
+				hexadecimal digit to its decimal equivalent, multiply it by 16
+				raised to the power of its position, and sum the results to get
+				the decimal equivalent.
+			</p>
+
+			<p>Learn to convert hexadecimal to decimal!</p>
+			<app-button-with-link
+				text="Start Tasks"
+				route="/hex-dec/tasks/{{ taskID }}"
+			/>
+			<p>Click the button to navigate to tasks.</p>
+		</div>
+		<div *ngSwitchDefault>
+			<h1>Invalid Type</h1>
+			<p>The tutorial type "{{ type }}" is not supported.</p>
+		</div>
+	</ng-container>
+</div>

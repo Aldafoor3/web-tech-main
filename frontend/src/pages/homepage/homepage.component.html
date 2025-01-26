@@ -1,0 +1,19 @@
+<h1>Welcome to the BIN-DEC-HEX Mentor Tool!</h1>
+<p>
+	This tool is designed to teach you the conversions between the binary,
+	decimal and hexadecimal number system. Below or on the sidebar there are
+	buttons that link to each conversion direction.
+</p>
+
+<p>To start one of the task types, click on the corresponding button below.</p>
+
+<div class="button-grid">
+	<app-button-with-link
+		*ngFor="let item of labelLinkMap"
+		text="{{ item.label }}"
+		route="{{ item.abbreviation + '/tutorial' }}"
+	/>
+</div>
+
+<h2>BIN-DEC-HEX Mentor Tool Usage Statistics</h2>
+<app-solutioncountstats />
